@@ -1,0 +1,41 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoveLink - Dating</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.0.1/dist/socket.io.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to LoveLink</h1>
+        <button id="logoutBtn">Logout</button>
+    </header>
+
+    <section id="profileSection">
+        <h2>Your Profile</h2>
+        <form id="profileForm">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="file" id="profilePic" accept="image/*">
+            <button type="submit">Save Profile</button>
+        </form>
+    </section>
+
+    <section id="messageSection">
+        <h2>Chat</h2>
+        <div id="chatBox"></div>
+        <input type="text" id="messageInput" placeholder="Send a message">
+        <button id="sendBtn">Send</button>
+    </section>
+
+    <section id="videoSection">
+        <h2>Video Call</h2>
+        <button id="startCallBtn">Start Video Call</button>
+        <video id="localVideo" autoplay></video>
+        <video id="remoteVideo" autoplay></video>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
