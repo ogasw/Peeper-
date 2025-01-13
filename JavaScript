@@ -1,0 +1,17 @@
+const socket = io('http://localhost:5000'); // Assuming the backend is running on port 5000
+
+document.getElementById('sendBtn').addEventListener('click', () => {
+    const message = document.getElementById('messageInput').value;
+    socket.emit('send_message', message);
+    document.getElementById('messageInput').value = '';
+});
+
+socket.on('receive_message', (message) => {
+    const messageDiv = document.createElement('div');
+    messageDiv.textContent = message;
+    document.getElementById('chatBox').appendChild(messageDiv);
+});
+
+document.getElementById('startCallBtn').addEventListener('click', () => {
+    // WebRTC setup here
+});
